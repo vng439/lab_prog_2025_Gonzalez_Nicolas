@@ -1,0 +1,41 @@
+PATRON DE ACCESO A LOS DATOS. TODO LO QUE TENGA QUE VER CON LA TRANSFERENCIA DE DATOS
+
+DEFINE QUE OPERACIONES PUEDO HACER CON LA BASE DE DATOS = CRUD
+
+VAMOS A VER COMO DESDE PHP NOS CONECTAMOS A LA BD Y HACER CONSULTAS
+
+Explicación Patron de Diseño DAO -
+
+Aplicación o Usos de Patrones = Cuatro elementos escenciales
+
+-Nombre 
+-Problema a Resolver
+-Solución: sugerencia de herramientas que se usa para el tipo de Problema
+-Consecuencias: Ventajas y Desventajas de aplicar el Patrón.
+
+Patrones Arquitecturales
+Patrones según su propósito: Creacionales
+Patrones Estructurales
+Patrones de Comportamiento
+
+
+Patrón DAO: Data Access Object - Patrón de diseño estructural que define como va a ser el acceso a los datos.
+También se lo puede clasificar que es un patrón de comportamiento porque provee los metodos para trabajar los datos (CRUD)
+
+DAO
+Nombre: Data Access Object
+
+Problema: Fuerte acoplamiento = muchas responsabilidades. Si hace muchas cosas a la vez = alto acoplamiento.
+Necesidad de mantener la lógica de negocio separada de la lógica de acceso a los datos.
+Esto busca que ambas capas evolucionen de manera independiente
+
+Solucion: Crear una capa que encapsule el acceso a los datos (servicio). Provee los CRUD (Servicio)
+
+Consecuencias: 
+Ventaja: Encapsulacion y Desacoplamiento - Modularidad - Flexibilidad - Reutilizacion - Facilidad de pruebas (Debugging)
+
+Desventajas: Sobrecarga de Código (si la app es pequeña pq implica mucho más codigo debido a la división) - Complejidad Inicial
+
+
+
+
