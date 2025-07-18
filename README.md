@@ -23,15 +23,17 @@ junto con el uso de patrones de diseño, seguridad y manejo de sesiones.
   - Manejo de sesiones seguras
   - URL Amigables
 
-## **Estructura del proyecto**
+## Estructura del proyecto
 
+```
 /
-├── app/ # Lógica del servidor, DAO, DTO y controladores
-├── assets/ # Archivos estáticos como imágenes, CSS y JS
-├── includes/ # Archivos comunes (header, footer, navbar, etc.)
-├── pages/ # Páginas individuales de la aplicación
-├── index.php # Página principal
+├── app/               # Lógica del servidor, DAO, DTO y controladores
+├── assets/            # Archivos estáticos como imágenes, CSS y JS
+├── includes/          # Archivos comunes (header, footer, navbar, etc.)
+├── pages/             # Páginas individuales de la aplicación
+├── index.php          # Página principal
 └── README.md
+```
 
 
 ## **Funcionalidades destacadas**
