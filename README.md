@@ -31,6 +31,7 @@ junto con el uso de patrones de diseño, seguridad y manejo de sesiones.
 ├── includes/ # Archivos comunes (header, footer, navbar, etc.)
 ├── pages/ # Páginas individuales de la aplicación
 ├── index.php # Página principal
+└── README.md
 
 
 ## **Funcionalidades destacadas**
