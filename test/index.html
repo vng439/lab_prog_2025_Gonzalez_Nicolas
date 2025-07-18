@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <label for="">Cargar registros con el id => </label>
+    <input type="number" name="" id="datoId"> <br>
+
+    <button type="button" onclick="load(event)">Cargar Registro</button>
+
+    <form id="formCategoria" action="RequestTest.php" method="post"> 
+        <label for="">Nombre de la Categoria</label>
+        <input type="text" id="datoNombre" name="nombreCategoria">
+
+        <br>
+
+        <input type="submit" value="Registrar Categoria" onclick="save(event)">
+
+    </form>
+</body>
+</html>

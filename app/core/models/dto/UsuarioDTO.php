@@ -13,16 +13,16 @@ final class UsuarioDTO implements InterfaceDTO{
 
     public function __construct(array $data = [] ){
 
-        $this->setId($data["id"] ?? 0);
+        $this->setId((int) $data["id"] ?? 0);
         $this->setApellido($data["apellido"] ?? "");
         $this->setNombres($data["nombres"] ?? "");
         $this->setCuenta($data["cuenta"] ?? "");
-        $this->setPerfil($data["perfil"] ?? 0);
+        $this->setPerfil($data["perfil"] ?? "");
         $this->setClave($data["clave"] ?? "");
         $this->setCorreo($data["correo"] ?? "");
         $this->setEstado($data["estado"] ?? 1);
         $this->setFechaAlta($data["fechaAlta"] ?? "");
-        $this->setResetPassword($data["resetPass"] ?? 0);
+        $this->setResetPass($data["resetPass"] ?? 0);
 
     }
 
@@ -44,7 +44,7 @@ final class UsuarioDTO implements InterfaceDTO{
         return $this->cuenta;
     }
 
-    public function getPerfil(): int{
+    public function getPerfil(): string{
         return $this->perfil;
     }
 
@@ -68,6 +68,14 @@ final class UsuarioDTO implements InterfaceDTO{
         return $this->resetPass;
     }
 
+    public function getPerfilNombre(): string {
+    return match($this->perfil) {
+        1 => "Administrador",
+        2 => "Operador",
+        default => "Desconocido"
+    };
+}
+
 
     /* SETTERS */
 
@@ -88,11 +96,23 @@ final class UsuarioDTO implements InterfaceDTO{
 
     public function setCuenta(string $cuenta){
         $this->cuenta =
-        is_string($cuenta) && preg_match('/^[a-zA-Z0-9]{6-15}$/', $cuenta) ? $cuenta : "";
+        is_string($cuenta) && (strlen(trim($cuenta)) <= 45) ? trim($cuenta) : "";
     }
 
-    public function setPerfil(int $perfil){
-        $this->perfil = (is_integer($perfil) && $perfil > 0) ? $perfil : 0;
+    public function setPerfil(string $perfil){
+        $map = [
+        'Administrador' => 1,
+        'Operador'      => 2,
+        1               => 1,
+        2               => 2
+        ];
+
+        if (isset($map[$perfil])) {
+            $this->perfil = $map[$perfil];
+        } else {
+            $this->perfil = 0;
+        }
+
     }
 
     public function setClave(string $clave){
@@ -104,15 +124,17 @@ final class UsuarioDTO implements InterfaceDTO{
     }
 
     public function setEstado(int $estado){
-        $this->estado = ($estado === 0 || $estado === 1) ? $estado : 1;
+
+        $this->estado = ($estado == 1) ? $estado : 0;
+
     }
 
     public function setFechaAlta(string $fechaAlta){
         $this->fechaAlta = is_string($fechaAlta) ? $fechaAlta : "";
     }
 
-    public function setResetPassword(int $resetPass){
-        $this->resetPass = ($resetPass === 0 || $resetPass === 1) ? $resetPass : 1;
+    public function setResetPass(int $resetPass){
+        $this->resetPass = ($resetPass == 0 || $resetPass == 1) ? $resetPass : 1;
     }
 
     
@@ -128,7 +150,8 @@ final class UsuarioDTO implements InterfaceDTO{
             "correo"        => $this->getCorreo(),
             "estado"        => $this->getEstado(),
             "fechaAlta"     => $this->getFechaAlta(),
-            //"resetPass"      => $this->getResetPassword()
+            "resetPass"     => $this->getResetPass(),
+            "perfilNombre"  => $this->getPerfilNombre()
         ];
     }
 

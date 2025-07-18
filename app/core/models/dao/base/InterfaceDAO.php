@@ -18,9 +18,4 @@ interface InterfaceDAO{
 
     public function list(array $filters): array;
 
-    public function suggestive(array $filters): array;
-
-    public function foundRows(): int;
-
-    public function getLastInsertId(): int;
 }

@@ -1,0 +1,16 @@
+Patron de diseño de comportamiento que permite pasar silciitudes a lo largo de una cadena de manejadores
+
+Cada nodo tiene una responsabilidad unica y distinta. la peticion pasa por cada una de las peticiones y evalua si cumple alguna restriccion impuesta por el programador
+
+Cada nodo es un middleware. La lista doblemente enlazada = pipeline = tuberia.
+
+Proposito = evitar acoplar el emisor de una petición a su receptor
+
+explicación del diagrama de secuencia del CoR
+
+HandlerN = siempre es el router. El que recibe la petición ya analizada por todos los middleware y si está todo bien, el último handleer es el que decide
+a que controlador y acción llamar
+
+
+
+

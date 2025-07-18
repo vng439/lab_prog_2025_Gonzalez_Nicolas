@@ -1,6 +1,7 @@
 <?php
 
 namespace app\core\models\dto;
+
 use app\core\models\dto\base\InterfaceDTO;
 
 final class CategoriaDTO implements InterfaceDTO{
@@ -27,7 +28,8 @@ final class CategoriaDTO implements InterfaceDTO{
     }
 
     public function setNombre(string $nombre){
-        $this->nombre = (preg_match('/^[a-zA-Z\s]{1,45}$/', $nombre)) ? $nombre : "";
+        $this->nombre = 
+        is_string($nombre) && (strlen(trim($nombre)) <= 100) ? $nombre : "";
     }
 
     public function toArray(): array {

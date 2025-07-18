@@ -1,0 +1,1 @@
+Todo lo que sea recurso reutilizable lo deberíamis tener dentro de resources

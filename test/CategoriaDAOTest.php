@@ -1,6 +1,5 @@
 <?php
 
-
 require_once '../app/core/models/dao/base/InterfaceDAO.php';
 require_once '../app/core/models/dao/base/DAO.php';
 require_once '../app/core/models/dao/CategoriaDAO.php';
@@ -15,15 +14,12 @@ use app\core\models\dao\CategoriaDAO;
 
 
 try{
-    $data = ["id" => 0, "nombre" => "Equipamiento Musical"];
-    $dto = new CategoriaDTO($data);
-
-    $dao = new CategoriaDao(Connection::get());
-    $dao->save($dto->toArray());
     
 }
+
 catch(\PDOException $ex){
     echo "Error database => " . $ex->getMessage();
+    
 }
 
 

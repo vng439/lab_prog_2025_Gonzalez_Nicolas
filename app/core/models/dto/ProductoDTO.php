@@ -3,7 +3,7 @@
 namespace app\core\models\dto;
 use app\core\models\dto\base\InterfaceDTO;
 
-final class ProductosDTO implements InterfaceDTO{
+final class ProductoDTO implements InterfaceDTO{
 
     /* VARIABLES DE LA TABLA PRODUCTOS */
     private $id, $nombre, $codigo, $descripcion, $categoriaId, $precio, $stock;
@@ -18,7 +18,7 @@ final class ProductosDTO implements InterfaceDTO{
         $this->setCodigo($data["codigo"] ?? "");
         $this->setDescripcion($data["descripcion"] ?? "");
         $this->setCategoriaId($data["categoriaId"] ?? 0);
-        $this->setPrecio($data["precio"] ?? 0);
+        $this->setPrecio($data["precio"] ?? 0.0);
         $this->setStock($data["stock"] ?? 0);
 
     }
@@ -69,7 +69,7 @@ final class ProductosDTO implements InterfaceDTO{
 
     public function setCodigo(string $codigo){
         $this->codigo =
-        is_string($codigo) && preg_match('/^[a-zA-Z0-9]{6-15}$/', $codigo) ? $codigo : "";
+        is_string($codigo) && (strlen(trim($codigo)) <= 25) ? $codigo : "";
     }
 
     public function setDescripcion(string $descripcion){
@@ -96,8 +96,8 @@ final class ProductosDTO implements InterfaceDTO{
             "codigo"            => $this->getCodigo(),
             "descripcion"       => $this->getDescripcion(),
             "categoriaId"       => $this->getCategoriaId(),
-            "Precio"            => $this->getPrecio(),
-            "Stock"             => $this->getStock()
+            "precio"            => $this->getPrecio(),
+            "stock"             => $this->getStock()
         ];
     }
 

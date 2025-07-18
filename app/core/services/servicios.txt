@@ -1,1 +1,4 @@
 Separa responsabilidades.
+SERVICIO ES UNA CAPA PREVIA AL MODELO. LOGICAMENTE SE MANEJA EL MISMO TIPO DE OPERACIÓN CRUD.
+
+el profe usó una interfaz de servicio de su sistema

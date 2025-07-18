@@ -1,0 +1,17 @@
+{
+    "name": "user/app",
+    "description": "Sistema de Gestion",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "app\\": "",
+            "Dompdf\\": "vendor/dompdf/dompdf/src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nicolas Gonzalez"
+        }
+    ],
+    "require": {}
+}
