@@ -50,4 +50,4 @@ Este es un proyecto académico individual y no está abierto a contribuciones ex
 Este proyecto se distribuye únicamente con fines educativos. No posee licencia abierta.
 
 ## **Autor**
-Nicolás González
+Nicolás Gonzalez
