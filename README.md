@@ -3,7 +3,7 @@
 Este proyecto fue desarrollado como trabajo final para la cátedra **Laboratorio de Programación**. Consiste en una aplicación web que pone en práctica diversos conceptos de desarrollo frontend y backend, 
 junto con el uso de patrones de diseño, seguridad y manejo de sesiones.
 
-## 🔧 Tecnologías utilizadas
+## **Tecnologías utilizadas**
 
 - **Frontend**
   - HTML
@@ -31,18 +31,18 @@ junto con el uso de patrones de diseño, seguridad y manejo de sesiones.
 ├── pages/ # Páginas individuales de la aplicación
 ├── index.php # Página principal
 
-**Funcionalidades destacadas**
+## **Funcionalidades destacadas**
 - Registro y login con contraseñas encriptadas
 - Manejo de sesiones para proteger páginas privadas
 - Patrón DAO/DTO para separar lógica de acceso a datos
 - Patrón Chain of Responsibility aplicado a validaciones
 - Navegación dinámica con Bootstrap
 
-**Contribuciones**
+## **Contribuciones**
 Este es un proyecto académico individual y no está abierto a contribuciones externas. Sin embargo, si encontrás errores o tenés sugerencias, podés abrir un issue o contactarme.
 
-**Licencia**
+## **Licencia**
 Este proyecto se distribuye únicamente con fines educativos. No posee licencia abierta.
 
-**Autor**
+## **Autor**
 Nicolás González
